@@ -5,6 +5,14 @@ const asg = new AWS.AutoScaling();
 
 exports.handle = event => {
   // double ASG MaxSize, MinSize, and DesiredCapacity
+  // asg.describeAutoScalingGroups(event.targetASG)
+    // .then(response =>{
+    //     let desiredCapactiy = response.data.AutoScalingGroups[0].DesiredCapacity *2
+    //     let max = response.data.AutoScalingGroups[0].MaxSize * 2
+    //     let min = response.data.AutoScalingGroups[0].MinSize * 2
+    //     console.log(`DC: ${desiredCapacity} | Max: ${max} | Min: ${min}`);
+    // })
+    // .catch(err => console.error(err))
   asg.describeAutoScalingGroups(event.targetASG, (err, data) => {
     if (err) {
       console.log(err);
