@@ -1,5 +1,9 @@
 {
-  "dependencies": {
+    "license": "MIT",
+    "dependencies": {
     "aws-sdk": "^2.332.0"
+  },
+  "scripts": {
+    "test": "node term_instance_test"
   }
 }
